@@ -35,4 +35,10 @@ foreach(Szoba sz in szobak)
 }
 
 Console.WriteLine($"Összes regisztrált szoba: {Szoba.OsszesRegisztraltSzoba}");
+int osszesen = 0;
+foreach(Szoba sz in szobak)
+{
+    osszesen += sz.EjszakaiAr * sz.Ferohely;
+}
+Console.WriteLine($"Összesen {IlletekKalkulator.VegosszegIFAVal(osszesen)} Ft bevétel van egy éjszakára teljes kihasználtság esetén.");
 Console.WriteLine("===========================================================");
