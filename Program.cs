@@ -1,4 +1,5 @@
-﻿using Szalloda;
+﻿using System.Text;
+using Szalloda;
 
 Console.WriteLine("===========================================================");
 
@@ -41,4 +42,18 @@ foreach(Szoba sz in szobak)
     osszesen += sz.EjszakaiAr * sz.Ferohely;
 }
 Console.WriteLine($"Összesen {IlletekKalkulator.VegosszegIFAVal(osszesen)} Ft bevétel van egy éjszakára teljes kihasználtság esetén.");
+
+Szoba legnagyobb = szobak[0];
+
+foreach(Szoba sz in szobak)
+{
+    if(sz.Ferohely > legnagyobb.Ferohely)
+    {
+        legnagyobb = sz;
+    }
+}
+Szoba legnagyobb2 = szobak.MaxBy(sz => sz.Ferohely);
+
+Console.WriteLine($"A legnagyobb szoba: {legnagyobb}");
+Console.WriteLine($"A legnagyobb szoba: {legnagyobb2}");
 Console.WriteLine("===========================================================");
